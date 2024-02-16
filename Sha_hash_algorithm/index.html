@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHA-1 hash function algorithm</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h3>SHA-1 HASH FUNCTION ALGORITHM</h3>
+      <!--  -->
+      <div class="entering">
+        <div class="message">
+          <h4>M:</h4>
+          <!-- <div > -->
+          <textarea
+            placeholder="Enter the text"
+            id="message"
+            type="text"
+            class="message-input"
+          ></textarea>
+          <button onclick="getMessage()" type="button">Ok</button>
+          <!-- </div> -->
+        </div>
+        <div id="ascii-btn">
+          <div class="message-ascii">
+            <h4>
+              ASCII (hexadecimal): {
+              <p id="ascii" contenteditable="true"></p>
+              }
+            </h4>
+          </div>
+          <button onclick="setParameters()" class="sha-btn" type="button">
+            SHA-1
+          </button>
+        </div>
+      </div>
+      <!--  -->
+      <div id="process">
+        <figure>
+          <img width="450" src="./img/sha-1.jpg" alt="SHA-1" />
+          <figcaption>SHA-1 hash function algorithm</figcaption>
+        </figure>
+        <div class="rounds">
+          <p>Rounds:</p>
+          <input id="rounds-num" class="round-input" type="number" />
+          <button onclick="getRounds()" type="button">Ok</button>
+        </div>
+        <div id="parameters">
+          <div class="blocks" id="Wt">
+            <p>Plaintext blocks</p>
+            <img src="./img/Wt.png" alt="W{t}" width="500" />
+            <h5 style="text-align: left" id="W_block"></h5>
+          </div>
+          <div class="blocks">
+            <p>
+              Constants. Enter the hexadecimal values of constants (32-bits)
+            </p>
+            <table border="1">
+              <tr>
+                <td>
+                  <label for="k1">K<sub>1</sub>=</label
+                  ><input type="text" id="k1" />
+                </td>
+                <td class="td_t1">
+                  <label for="t1_from">from t=</label
+                  ><input class="t_input" type="number" id="t1_from" />
+                  <label for="t1_to">to t=</label
+                  ><input class="t_input" type="number" id="t1_to" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="k2">K<sub>2</sub>=</label
+                  ><input type="text" id="k2" />
+                </td>
+                <td class="td_t1">
+                  <label for="t2_from">from t=</label
+                  ><input class="t_input" type="number" id="t2_from" />
+                  <label for="t2_to">to t=</label
+                  ><input class="t_input" type="number" id="t2_to" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="k3">K<sub>3</sub>=</label
+                  ><input type="text" id="k3" />
+                </td>
+                <td class="td_t1">
+                  <label for="t3_from">from t=</label
+                  ><input class="t_input" type="number" id="t3_from" />
+                  <label for="t3_to">to t=</label
+                  ><input class="t_input" type="number" id="t3_to" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="k4">K<sub>4</sub>=</label
+                  ><input type="text" id="k4" />
+                </td>
+                <td class="td_t1">
+                  <label for="t4_from">from t=</label
+                  ><input class="t_input" type="number" id="t4_from" />
+                  <label for="t4_to">to t=</label
+                  ><input class="t_input" type="number" id="t4_to" />
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="blocks">
+            <p>Buffers. Enter the hexadecimal values of buffers (32-bits)</p>
+            <table border="1">
+              <tr>
+                <td><label for="A">A=</label><input type="text" id="A" /></td>
+              </tr>
+              <tr>
+                <td><label for="B">B=</label><input type="text" id="B" /></td>
+              </tr>
+              <tr>
+                <td><label for="C">C=</label><input type="text" id="C" /></td>
+              </tr>
+              <tr>
+                <td><label for="D">D=</label><input type="text" id="D" /></td>
+              </tr>
+              <tr>
+                <td><label for="E">E=</label><input type="text" id="E" /></td>
+              </tr>
+            </table>
+          </div>
+          <button onclick="SHA1_Rounds()" class="sha-btn" type="button">
+            Rounds of SHA-1
+          </button>
+        </div>
+        <div id="inter-hash" class="blocks">
+          <p>Intermediate hash values</p>
+          <!-- <table id="hash_table" border="1"> -->
+          <!-- <tr> -->
+          <!-- <th>№</th> -->
+          <!-- <th>A</th> -->
+          <!-- <th>B</th> -->
+          <!-- <th>C</th> -->
+          <!-- <th>D</th> -->
+          <!-- <th>E</th> -->
+          <!-- <th style="width: 100%">Hash value</th> -->
+          <!-- </tr> -->
+          <!-- </table> -->
+          <!-- <h3 class="final-hash"> -->
+          <!-- Final hash value is h(M) = <span id="hash-value"></span> -->
+          <!-- </h3> -->
+        </div>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
